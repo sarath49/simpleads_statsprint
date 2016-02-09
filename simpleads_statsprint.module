@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @file
+ *
+ * Provide a pdf format for printing the stats displayed on node Statistics page. 
+ */
+
+/**
+ *
+ * Implements hook_preprocess_page().
+ */
+function simpleads_statsprint_preprocess_page(&$variables) {
+  
+}
