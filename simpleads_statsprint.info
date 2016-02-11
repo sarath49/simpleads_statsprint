@@ -1,6 +1,7 @@
 name = SimpleAds Stats Print
 description = Provide a pdf format for printing the stats displayed on node Statistics page.
+package = SimpleAds
 core = 7.x
 
 dependencies[] = simpleads
-dependencies[] = print
+dependencies[] = xautoload
