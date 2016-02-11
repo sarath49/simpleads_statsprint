@@ -36,3 +36,19 @@ function simpleads_statsprint_permission() {
     ),
   );
 }
+
+/**
+ * Implements hook_menu().
+ */
+function simpleads_statsprint_menu() {
+ return array(
+   'printadstat/%' => array(
+     'page callback' => 'simpleads_stats_pdf',
+     'page arguments' => arg(1),
+     'access callback' => array('access simpleads statsprint'),
+     'type' => MENU_CALLBACK,
+     'file' => 'print.ad.stat.inc',
+     'file path' => drupal_get_path('module', 'simpleads_statsprint/includes'),
+   ),
+ );
+}
