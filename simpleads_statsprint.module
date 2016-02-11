@@ -7,6 +7,24 @@
  */
 
 /**
+ * Implements hook_libraries_info().
+ * 
+ * @see xautoload.api.php
+ */
+function simpleads_statsprint_libraries_info() {
+  return array(
+    'dompdf' => array(
+      'name' => 'dompdf/dompdf',
+      'xautoload' => function($adaptor) {
+        /** @var \Drupal\xautoload\Adapter\LocalDirectoryAdapter $adapter */
+        // Scans sites/all/libraries/dompdf/composer.json to look for
+        // autoloader information.
+        $adaptor->composerJson('composer.json');
+      }
+    ),
+  );
+}
+/**
  * Implements hook_preprocess_page().
  */
 function simpleads_statsprint_preprocess_page(&$variables) {
