@@ -52,3 +52,17 @@ function simpleads_statsprint_menu() {
    ),
  );
 }
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function simpleads_statsprint_preprocess_page(&$variables) {
+  if(arg(2) == 'stats' || arg(2) == 'stat') {
+    unset($variables['simpleads_statsprint']);
+    $variables['simpleads_statsprint'] = array(
+      'markup' => $variables['page']['content']['system_main']['main']['#markup'],
+      'nid' => arg(1),
+    );
+    dpm($variables);
+  }
+}

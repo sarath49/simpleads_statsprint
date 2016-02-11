@@ -19,7 +19,7 @@ function simpleads_stats_pdf($nodeid) {
   $dompdf->render();
 
   // Output the generated PDF to Browser
-  
-  dpm($dompdf->stream());
-}
+  $dompdf->stream();
 
+  return;
+}
