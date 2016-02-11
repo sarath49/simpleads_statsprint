@@ -24,9 +24,15 @@ function simpleads_statsprint_libraries_info() {
     ),
   );
 }
+
 /**
- * Implements hook_preprocess_page().
+ * Implements hook_permission().
  */
-function simpleads_statsprint_preprocess_page(&$variables) {
-  
+function simpleads_statsprint_permission() {
+  return array(
+    'access simpleads statsprint' => array(
+      'title' => t('Access the pdf stats page.'),
+      'description' => t('Allow view of SimpleAds statitics in pdf format.')
+    ),
+  );
 }
