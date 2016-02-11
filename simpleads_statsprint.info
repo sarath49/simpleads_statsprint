@@ -4,4 +4,4 @@ package = SimpleAds
 core = 7.x
 
 dependencies[] = simpleads
-dependencies[] = xautoload
+dependencies[] = xautoload (>= 7.x-5.0)
