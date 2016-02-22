@@ -60,6 +60,8 @@ function _simpleads_statsprint_data($nodeid) {
     $total_data['impressions'] += $result[$i]->impressions;
     $total_data['unique_impressions'] += $result[$i]->impressions_unique;
   }
+  dpm($total_data);
+  dpm($result);
   $markup = theme('simpleads_statsprint', array($total => $total_data, $data => $result));
   return $markup;
 }
