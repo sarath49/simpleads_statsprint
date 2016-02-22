@@ -1,6 +1,7 @@
 <?php
 $index = count($data[1]);
 ?>
+<h1 style="text-align: center">SimpleAds Statistics</h1>
 <h2>Total</h2>
 <table>
 			<tr>
