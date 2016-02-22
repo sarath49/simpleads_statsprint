@@ -85,11 +85,3 @@ function simpleads_statsprint_theme() {
     ),
   );
 }
-
-/**
- * Implements hook_preprocess_HOOK().
- */
-function simpleads_statsprint_preprocess_simpleads_statsprint(&$variables) {
-  drupal_add_css(drupal_get_path('module', 'simpleads_statsprint') .
-      '/simpleads-statsprint.css');
-}

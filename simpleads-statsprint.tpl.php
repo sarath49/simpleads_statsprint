@@ -3,48 +3,48 @@ $index = count($data[1]);
 ?>
 <h1 style="text-align: center">SimpleAds Statistics</h1>
 <h2>Total</h2>
-<table>
+<table style="border-collapse: collapse; width: 100%;">
 			<tr>
-				<th>Clicks</th>
-				<th>Unique clicks</th>
-				<th>Impressions</th>
-				<th>Unique impressions</th>
-				<th>Click-through rate</th>
+				<th style="text-align: left; padding: 8px; background-color: #E1E2DC; color: #000;">Clicks</th>
+				<th style="text-align: left; padding: 8px; background-color: #E1E2DC; color: #000;">Unique clicks</th>
+				<th style="text-align: left; padding: 8px; background-color: #E1E2DC; color: #000;">Impressions</th>
+				<th style="text-align: left; padding: 8px; background-color: #E1E2DC; color: #000;">Unique impressions</th>
+				<th style="text-align: left; padding: 8px; background-color: #E1E2DC; color: #000;">Click-through rate</th>
 			</tr>
 			<tr>
-				<td><?php print $data[0]['click']; ?></td>
-				<td><?php print $data[0]['unique_clicks']; ?></td>
-				<td><?php print $data[0]['impressions']; ?></td>
-				<td><?php print $data[0]['unique_impressions']; ?></td>
-				<td><?php print 
+				<td style="text-align: left; padding: 8px;"><?php print $data[0]['click']; ?></td>
+				<td style="text-align: left; padding: 8px;"><?php print $data[0]['unique_clicks']; ?></td>
+				<td style="text-align: left; padding: 8px;"><?php print $data[0]['impressions']; ?></td>
+				<td style="text-align: left; padding: 8px;"><?php print $data[0]['unique_impressions']; ?></td>
+				<td style="text-align: left; padding: 8px;"><?php print 
             ($data[0]['unique_clicks']/$data[0]['unique_impressions']) * 100;
           ?></td>
 			</tr>							
 	</table>
 <h2>Daily statistics</h2>
-<table>
+<table style="border-collapse: collapse; width: 100%;">
   <tr>
-    <th>Date</th>
-    <th>Clicks</th>
-    <th>Unique Clicks</th>
-    <th>Impressions</th>
-    <th>Unique Impressions</th>
+    <th style="text-align: left; padding: 8px; background-color: #E1E2DC; color: #000;">Date</th>
+    <th style="text-align: left; padding: 8px; background-color: #E1E2DC; color: #000;">Clicks</th>
+    <th style="text-align: left; padding: 8px; background-color: #E1E2DC; color: #000;">Unique Clicks</th>
+    <th style="text-align: left; padding: 8px; background-color: #E1E2DC; color: #000;">Impressions</th>
+    <th style="text-align: left; padding: 8px; background-color: #E1E2DC; color: #000;">Unique Impressions</th>
   </tr>
   <?php for ($i = 0; $i < $index; $i++): ?>
     <tr>
-      <td>
+      <td style="text-align: left; padding: 8px;">
         <?php print date('d/m/y H:i A', $data[1][$i]['date']); ?>
       </td>
-      <td>
+      <td style="text-align: left; padding: 8px;">
         <?php print $data[1][$i]['click']; ?>
       </td>
-      <td>
+      <td style="text-align: left; padding: 8px;">
         <?php print $data[1][$i]['unique_clicks']; ?>
       </td>
-      <td>
+      <td style="text-align: left; padding: 8px;">
         <?php print $data[1][$i]['impressions']; ?>
       </td>
-      <td>
+      <td style="text-align: left; padding: 8px;">
         <?php print $data[1][$i]['unique_impressions']; ?>
       </td>
     </tr>
