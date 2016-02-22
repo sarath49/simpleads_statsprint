@@ -32,19 +32,19 @@ $index = count($data[1]);
   <?php for ($i = 0; $i < $index; $i++): ?>
     <tr>
       <td>
-        <?php print date('d/m/y H:i A', $data[$i]['date']); ?>
+        <?php print date('d/m/y H:i A', $data[1][$i]['date']); ?>
       </td>
       <td>
-        <?php print $data[$i]['click']; ?>
+        <?php print $data[1][$i]['click']; ?>
       </td>
       <td>
-        <?php print $data[$i]['unique_clicks']; ?>
+        <?php print $data[1][$i]['unique_clicks']; ?>
       </td>
       <td>
-        <?php print $data[$i]['impressions']; ?>
+        <?php print $data[1][$i]['impressions']; ?>
       </td>
       <td>
-        <?php print $data[$i]['unique_impressions']; ?>
+        <?php print $data[1][$i]['unique_impressions']; ?>
       </td>
     </tr>
   <?php endfor; ?>
