@@ -61,7 +61,7 @@ function _simpleads_statsprint_data($nodeid) {
     $total_data['unique_clicks'] += $result[$i]->clicks_unique;
     $total_data['impressions'] += $result[$i]->impressions;
     $total_data['unique_impressions'] += $result[$i]->impressions_unique;
-    $daily_stat[$i]['date'] = $result[$i]->click;
+    $daily_stat[$i]['date'] = $result[$i]->date;
     $daily_stat[$i]['click'] = $result[$i]->click;
     $daily_stat[$i]['unique_clicks'] = $result[$i]->clicks_unique;
     $daily_stat[$i]['impressions'] = $result[$i]->impressions;
