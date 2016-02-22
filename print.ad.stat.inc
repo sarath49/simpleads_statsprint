@@ -56,6 +56,7 @@ function _simpleads_statsprint_data($nodeid) {
     );
   
   $daily_stat = array();
+  dpm($result);
   for ($i = 0; $i < $index; $i++) {
     $total_data['click'] += $result[$i]->click;
     $total_data['unique_clicks'] += $result[$i]->clicks_unique;
