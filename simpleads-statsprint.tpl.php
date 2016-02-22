@@ -1,7 +1,5 @@
 <?php
 $index = count($data[1]);
-dpm(data[0]);
-dpm(data[1]);
 ?>
 <h2>Total</h2>
 <table>

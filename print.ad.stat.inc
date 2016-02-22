@@ -56,7 +56,7 @@ function _simpleads_statsprint_data($nodeid) {
     );
   
   $daily_stat = array();
-  dpm($result);
+  
   for ($i = 0; $i < $index; $i++) {
     $total_data['click'] += $result[$i]->clicks;
     $total_data['unique_clicks'] += $result[$i]->clicks_unique;
@@ -71,7 +71,7 @@ function _simpleads_statsprint_data($nodeid) {
   
   $stat = array();
   array_push($stat, $total_data, $daily_stat);
-  dpm($stat);
+  
   $markup = theme('simpleads_statsprint', array('data' => $stat));
   return $markup;
 }
