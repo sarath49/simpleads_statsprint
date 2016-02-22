@@ -43,7 +43,7 @@ function simpleads_statsprint_permission() {
 function simpleads_statsprint_menu() {
  return array(
    'printadstat/%' => array(
-     'page callback' => 'simpleads_stats_pdf',
+     'page callback' => 'simpleads_statsprint_pdf',
      'page arguments' => array(1),
      'access arguments' => array('access simpleads statsprint'),
      'type' => MENU_CALLBACK,
@@ -70,4 +70,18 @@ function simpleads_statsprint_preprocess_page(&$variables) {
     $variables['page']['content']['system_main']['main']['#markup'] = $markup;
   }
 
+}
+
+/**
+ * Implemnts hook_theme().
+ */
+function simpleads_statsprint_theme() {
+  return array(
+    'simpleads_statsprint' => array(
+      'variables' => array(
+        'data' => array(),
+      ),
+      'template' => 'simpleads-statsprint',
+    ),
+  );
 }
