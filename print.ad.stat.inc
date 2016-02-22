@@ -54,14 +54,23 @@ function _simpleads_statsprint_data($nodeid) {
     'impressions' => 0,
     'unique_impressions' => 0,
     );
+  
+  $daily_stat = array();
   for ($i = 0; $i < $index; $i++) {
     $total_data['click'] += $result[$i]->click;
     $total_data['unique_clicks'] += $result[$i]->clicks_unique;
     $total_data['impressions'] += $result[$i]->impressions;
     $total_data['unique_impressions'] += $result[$i]->impressions_unique;
+    $daily_stat['daily_stat'][$i]['date'] = $result[$i]->click;
+    $daily_stat['daily_stat'][$i]['click'] = $result[$i]->click;
+    $daily_stat['daily_stat'][$i]['unique_clicks'] = $result[$i]->clicks_unique;
+    $daily_stat['daily_stat'][$i]['impressions'] = $result[$i]->impressions;
+    $daily_stat['daily_stat'][$i]['unique_impressions'] = $result[$i]->impressions_unique;
   }
-  dpm($total_data);
-  dpm($result);
-  $markup = theme('simpleads_statsprint', array($total_data));
+  
+  $stat = array();
+  $stat = array_push($total_data, $daily_stat);
+
+  $markup = theme('simpleads_statsprint', array($data => $stat));
   return $markup;
 }
