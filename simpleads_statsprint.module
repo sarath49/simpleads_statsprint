@@ -79,6 +79,7 @@ function simpleads_statsprint_theme() {
   return array(
     'simpleads_statsprint' => array(
       'variables' => array(
+        'total' => array(),
         'data' => array(),
       ),
       'template' => 'simpleads-statsprint',
