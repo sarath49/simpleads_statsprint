@@ -17,7 +17,8 @@ $index = count($data[1]);
 				<td style="text-align: left; padding: 8px;"><?php print $data[0]['impressions']; ?></td>
 				<td style="text-align: left; padding: 8px;"><?php print $data[0]['unique_impressions']; ?></td>
 				<td style="text-align: left; padding: 8px;"><?php print 
-            ($data[0]['unique_clicks']/$data[0]['unique_impressions']) * 100;
+            round(
+                (($data[0]['unique_clicks']/$data[0]['unique_impressions']) * 100), 4) . '%' ;
           ?></td>
 			</tr>							
 	</table>
