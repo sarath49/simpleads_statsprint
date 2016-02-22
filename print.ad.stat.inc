@@ -48,18 +48,18 @@ function _simpleads_statsprint_data($nodeid) {
       ->condition('s.nid', $nodeid, '=');
   $result = $query->execute()->fetchAll();
   $index = count($result);
-  $total = array(
+  $total_data = array(
     'click' => 0, 
     'unique_clicks' => 0,
     'impressions' => 0,
     'unique_impressions' => 0,
     );
   for ($i = 0; $i < $index; $i++) {
-    $total['click'] += $result[$i]->click;
-    $total['unique_clicks'] += $result[$i]->clicks_unique;
-    $total['impressions'] += $result[$i]->impressions;
-    $total['unique_impressions'] += $result[$i]->impressions_unique;
+    $total_data['click'] += $result[$i]->click;
+    $total_data['unique_clicks'] += $result[$i]->clicks_unique;
+    $total_data['impressions'] += $result[$i]->impressions;
+    $total_data['unique_impressions'] += $result[$i]->impressions_unique;
   }
-  $markup = theme('simpleads_statsprint', array($total => $total, $data => $result));
+  $markup = theme('simpleads_statsprint', array($total => $total_data, $data => $result));
   return $markup;
 }
