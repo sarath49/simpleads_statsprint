@@ -10,7 +10,7 @@ use Dompdf\Dompdf;
 function simpleads_statsprint_pdf($nodeid) {
   if($nodeid == $_SESSION['simpleads_statsprint']['nid']) {
     $markup = $_SESSION['simpleads_statsprint']['markup'];
-    _simpleads_statsprint_data($nodeid);
+    return _simpleads_statsprint_data($nodeid);
     // instantiate and use the dompdf class
     $dompdf = new Dompdf();
     
@@ -28,8 +28,8 @@ function simpleads_statsprint_pdf($nodeid) {
     //return;
   }
   
- // unset($_SESSION['simpleads_statsprint']);
- // return;
+  unset($_SESSION['simpleads_statsprint']);
+  return;
 }
 
 /**
@@ -48,5 +48,6 @@ function _simpleads_statsprint_data($nodeid) {
       ->condition('s.nid', $nodeid, '=');
   $result = $query->execute()->fetchAll();
   dpm($result);
+  $markup = theme('simpleads_statsprint', array($data => $result));
   return $markup;
 }
