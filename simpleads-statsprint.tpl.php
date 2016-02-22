@@ -1,4 +1,12 @@
 <?php
+/**
+ * @file
+ * Format the table to be printed in pdf.
+ * 
+ * Available variables:
+ *  - $data: contains an array of simpleads stats.
+ * @see print.ad.stat.inc
+ */
 $index = count($data[1]);
 ?>
 <h1 style="text-align: center">SimpleAds Statistics</h1>
