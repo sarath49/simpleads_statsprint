@@ -69,7 +69,7 @@ function _simpleads_statsprint_data($nodeid) {
   }
   
   $stat = array();
-  $stat = array_push($total_data, $daily_stat);
+  array_push($stat, $total_data, $daily_stat);
   dpm($stat);
   $markup = theme('simpleads_statsprint', array($data => $stat));
   return $markup;
