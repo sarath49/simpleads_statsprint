@@ -62,6 +62,6 @@ function _simpleads_statsprint_data($nodeid) {
   }
   dpm($total_data);
   dpm($result);
-  $markup = theme('simpleads_statsprint', array($total_data, $result));
+  $markup = theme('simpleads_statsprint', array($total_data));
   return $markup;
 }
