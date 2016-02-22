@@ -55,10 +55,10 @@ function _simpleads_statsprint_data($nodeid) {
     'unique_impressions' => 0,
     );
   for ($i = 0; $i < $index; $i++) {
-    $total['click'] += $result[$i]['click'];
-    $total['unique_clicks'] += $result[$i]['clicks_unique'];
-    $total['impressions'] += $result[$i]['impressions'];
-    $total['unique_impressions'] += $result[$i]['impressions_unique'];
+    $total['click'] += $result[$i]->click;
+    $total['unique_clicks'] += $result[$i]->clicks_unique;
+    $total['impressions'] += $result[$i]->impressions;
+    $total['unique_impressions'] += $result[$i]->impressions_unique;
   }
   $markup = theme('simpleads_statsprint', array($total => $total, $data => $result));
   return $markup;
